@@ -51,4 +51,4 @@ class HandwrittenText extends HTMLElement {
   }
 }
 
-customElements.define('handwritten-text', HandwrittenText);
+customElements.define('handwritten-text-4', HandwrittenText);
