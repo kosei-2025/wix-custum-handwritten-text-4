@@ -11,8 +11,8 @@ class HandwrittenText extends HTMLElement {
             fill: none; /* 塗りなし（透明） */
             stroke: black; /* 黒の輪郭線 */
             stroke-width: 2; /* 輪郭線の太さ */
-            stroke-dasharray: 150; /* 文字が途切れないように設定 */
-            stroke-dashoffset: 150; /* 初めは見えない状態 */
+            stroke-dasharray: 500; /* 文字の全長に適した長さ */
+            stroke-dashoffset: 500; /* 初めは線を非表示 */
             animation: draw 1s forwards ease-in-out;
             stroke-linejoin: round; /* 交差部分をなめらかに */
             stroke-linecap: round; /* 線の端を丸くする */
@@ -20,7 +20,7 @@ class HandwrittenText extends HTMLElement {
 
           @keyframes draw {
             from {
-              stroke-dashoffset: 150;
+              stroke-dashoffset: 500;
             }
             to {
               stroke-dashoffset: 0;
