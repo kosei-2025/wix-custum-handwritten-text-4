@@ -2,23 +2,45 @@ class HandwrittenText extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <mask id="reveal-mask">
-            <rect x="0" y="0" width="800" height="250" fill="white">
-              <animate attributeName="y" from="250" to="0" dur="3s" fill="freeze" />
-            </rect>
-          </mask>
-        </defs>
-        
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
           
           text {
             font-family: 'Roboto', sans-serif;
             font-size: 60px;
-            fill: black; /* 塗りつぶしを黒に設定 */
-            mask: url(#reveal-mask); /* マスクを適用して手書き風に表示 */
+            fill: none; /* 塗りなし（透明） */
+            stroke: black; /* 黒の輪郭線 */
+            stroke-width: 2; /* 輪郭線の太さ */
+            stroke-dasharray: 1000; /* 線を途切れずに長くする */
+            stroke-dashoffset: 1000; /* 初めは線を非表示に */
+            animation: draw 3s forwards ease-in-out;
+            stroke-linejoin: round; /* 交差部分をなめらかに */
+            stroke-linecap: round; /* 線の端を丸くする */
           }
+
+          @keyframes draw {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          
+          /* 文字ごとに遅延を追加 */
+          text:nth-child(1) { animation-delay: 0.1s; }
+          text:nth-child(2) { animation-delay: 0.2s; }
+          text:nth-child(3) { animation-delay: 0.3s; }
+          text:nth-child(4) { animation-delay: 0.4s; }
+          text:nth-child(5) { animation-delay: 0.5s; }
+          text:nth-child(6) { animation-delay: 0.6s; }
+          text:nth-child(7) { animation-delay: 0.7s; }
+          text:nth-child(8) { animation-delay: 0.8s; }
+          text:nth-child(9) { animation-delay: 0.9s; }
+          text:nth-child(10) { animation-delay: 1.0s; }
+          text:nth-child(11) { animation-delay: 1.1s; }
+          text:nth-child(12) { animation-delay: 1.2s; }
+          text:nth-child(13) { animation-delay: 1.3s; }
+          text:nth-child(14) { animation-delay: 1.4s; }
+          text:nth-child(15) { animation-delay: 1.5s; }
+          text:nth-child(16) { animation-delay: 1.6s; }
         </style>
         
         <!-- 上の行（ARCHI-PRISMA） -->
