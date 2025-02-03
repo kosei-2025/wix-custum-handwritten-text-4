@@ -8,23 +8,14 @@ class HandwrittenText extends HTMLElement {
           text {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica", "Arial", sans-serif;
             font-size: 60px;
-            fill: none; /* 塗りなし（透明） */
-            stroke: black; /* 黒の輪郭線 */
-            stroke-width: 2; /* 輪郭線の太さ */
-            stroke-dasharray: 500; /* 文字の全長に適した長さ */
-            stroke-dashoffset: 500; /* 初めは線を非表示 */
-            animation: draw 2s forwards ease-in-out; /* すべて同時にアニメーション */
-            stroke-linejoin: round; /* 交差部分をなめらかに */
-            stroke-linecap: round; /* 線の端を丸くする */
+            fill: black; /* 塗りを適用 */
+            clip-path: inset(100% 0 0 0); /* 最初は完全に隠れる */
+            animation: fillText 3s forwards ease-in-out;
           }
 
-          @keyframes draw {
-            from {
-              stroke-dashoffset: 500;
-            }
-            to {
-              stroke-dashoffset: 0;
-            }
+          @keyframes fillText {
+            0% { clip-path: inset(100% 0 0 0); } /* 100% 隠れている */
+            100% { clip-path: inset(0 0 0 0); } /* 完全に表示 */
           }
         </style>
         
@@ -60,4 +51,4 @@ class HandwrittenText extends HTMLElement {
   }
 }
 
-customElements.define('handwritten-text-4', HandwrittenText);
+customElements.define('handwritten-text', HandwrittenText);
