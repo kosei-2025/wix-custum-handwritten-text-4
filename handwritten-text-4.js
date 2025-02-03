@@ -3,10 +3,10 @@ class HandwrittenText extends HTMLElement {
     this.innerHTML = `
       <svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
           
           text {
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica", "Arial", sans-serif;
             font-size: 60px;
             fill: none; /* 塗りなし（透明） */
             stroke: black; /* 黒の輪郭線 */
