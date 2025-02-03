@@ -41,6 +41,13 @@ class HandwrittenText extends HTMLElement {
           text:nth-child(14) { animation-delay: 1.4s; }
           text:nth-child(15) { animation-delay: 1.5s; }
           text:nth-child(16) { animation-delay: 1.6s; }
+          text:nth-child(17) { animation-delay: 1.7s; }
+          text:nth-child(18) { animation-delay: 1.8s; }
+          text:nth-child(19) { animation-delay: 1.9s; }
+          text:nth-child(20) { animation-delay: 2.0s; }
+          text:nth-child(21) { animation-delay: 2.1s; }
+          text:nth-child(22) { animation-delay: 2.2s; }
+          text:nth-child(23) { animation-delay: 2.3s; }
         </style>
         
         <!-- 上の行（ARCHI-PRISMA） -->
